@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_files/models/product.dart';
+// import 'package:riverpod_files/models/product.dart';
 import 'package:riverpod_files/providers/products_provider.dart';
 
 class CartScreen extends ConsumerStatefulWidget {
@@ -16,7 +16,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final cardProducts = ref.watch(reduceProductsProvider);
+    final cardProducts = ref.watch(reducedProductsProvider);
 
     return Scaffold(
       appBar: AppBar(
