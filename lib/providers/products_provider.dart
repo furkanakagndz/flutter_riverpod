@@ -35,3 +35,5 @@ List<Product> products(ref) {
 List<Product> reducedProducts(ref) {
   return allProducts.where((element) => element.price < 50).toList();
 }
+// you should use this line:
+// dart run build_runner watch
