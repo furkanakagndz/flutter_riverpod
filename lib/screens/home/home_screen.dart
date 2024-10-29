@@ -38,10 +38,14 @@ class HomeScreen extends ConsumerWidget {
                   Text('£${allProducts[index].price}'),
 
                   if (cartProducts.contains(allProducts[index]))
-                    TextButton(onPressed: () {}, child: const Text('Remove')),
+                    TextButton(onPressed: () {
+                      ref.read(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
+                    }, child: const Text('Remove')),
 
                   if (!cartProducts.contains(allProducts[index]))
-                    TextButton(onPressed: () {}, child: const Text('Add to Cart')),
+                    TextButton(onPressed: () {
+                      ref.read(cartNotifierProvider.notifier).addProduct(allProducts[index]);
+                    }, child: const Text('Add to Cart')),
                 ],
               ),
             );
